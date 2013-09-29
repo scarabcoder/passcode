@@ -1,6 +1,7 @@
 import RPi.GPIO as gpio
 import time
-gpio.setwarnings(False)
+#gpio.setwarnings(False)
+#No need to have this now that we run gpio.cleanup()
 gpio.setmode(gpio.BCM)
 zero = 17
 one = 18
