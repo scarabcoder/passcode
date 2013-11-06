@@ -1,6 +1,7 @@
 import RPi.GPIO as gpio
 import time
-gpio.setwarnings(False)
+#gpio.setwarnings(False)
+#No need to have this now that we run gpio.cleanup()
 gpio.setmode(gpio.BCM)
 zero = 17
 one = 18
@@ -69,3 +70,6 @@ while (correct == False):
 		print tempass
 		oldtempass = tempass
 		
+# As suggested by https://code.google.com/p/raspberry-gpio-python/wiki/BasicUsage
+# "By returning all channels you have used back to inputs, you can avoid accidental damage to your RPi by shorting out the pins"
+gpio.cleanup()
